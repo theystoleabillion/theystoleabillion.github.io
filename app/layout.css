@@ -1,0 +1,229 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #101110f5;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 86px;
+  gap: 30px;
+}
+.brand {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+.brand-symbol {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.brand > span {
+  font-family: var(--font-display), sans-serif;
+  line-height: 1.02;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+}
+.brand-dot {
+  color: var(--accent);
+}
+.desktop-navigation {
+  display: flex;
+  gap: 36px;
+  padding-left: 25px;
+}
+.desktop-navigation a {
+  font-size: 13px;
+  color: #c5c7bc;
+}
+.desktop-navigation a:hover {
+  color: var(--accent);
+}
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-socials a {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 35px;
+}
+.header-socials a:hover {
+  color: var(--accent);
+}
+.mobile-navigation {
+  display: none;
+}
+.site-footer {
+  padding-block: 38px 24px;
+}
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 19px;
+}
+.back-to-top {
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  width: 38px;
+  height: 38px;
+}
+.back-to-top:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.footer-bottom {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 30px;
+  justify-content: space-between;
+  padding-top: 22px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.footer-bottom > span:nth-child(2) {
+  font-family: var(--font-mono), monospace;
+  font-size: 9px;
+}
+.privacy-details {
+  max-width: 300px;
+  text-align: right;
+}
+.privacy-details summary {
+  list-style: none;
+}
+.privacy-details summary::-webkit-details-marker {
+  display: none;
+}
+.privacy-details summary:hover {
+  color: var(--accent);
+}
+.privacy-details p {
+  position: absolute;
+  right: 0;
+  bottom: 35px;
+  width: min(400px, 100%);
+  padding: 22px;
+  background: #21241d;
+  border: 1px solid var(--border);
+  text-align: left;
+  font-size: 13px;
+  box-shadow: 0 8px 30px #0006;
+}
+
+@media (max-width: 1050px) {
+  .desktop-navigation {
+    padding-left: 0;
+    gap: 26px;
+  }
+  .header-socials {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    min-height: 72px;
+    gap: 18px;
+  }
+  .brand {
+    gap: 10px;
+  }
+  .brand > span {
+    font-size: 16px;
+  }
+  .brand-symbol {
+    width: 38px;
+    height: 38px;
+  }
+  .desktop-navigation {
+    display: none;
+  }
+  .header-socials {
+    margin-left: auto;
+    gap: 10px;
+  }
+  .header-socials a {
+    width: 28px;
+  }
+  .mobile-navigation {
+    display: block;
+  }
+  .mobile-navigation summary {
+    display: grid;
+    align-content: center;
+    gap: 6px;
+    width: 30px;
+    height: 40px;
+    list-style: none;
+  }
+  .mobile-navigation summary::-webkit-details-marker {
+    display: none;
+  }
+  .mobile-navigation summary span {
+    height: 1px;
+    width: 24px;
+    background: var(--foreground);
+    transition: transform 0.2s;
+  }
+  .mobile-navigation[open] summary span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+  .mobile-navigation[open] summary span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+  .mobile-navigation nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 14px 25px 22px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-navigation nav a {
+    padding-block: 12px;
+    font-size: 17px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-navigation nav a:hover {
+    color: var(--accent);
+  }
+  .site-footer {
+    padding-block: 28px 24px;
+  }
+  .footer-bottom {
+    gap: 12px 20px;
+  }
+  .footer-bottom > span:nth-child(2) {
+    display: none;
+  }
+  .privacy-details {
+    text-align: left;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-socials a:nth-child(2) {
+    display: none;
+  }
+}

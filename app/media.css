@@ -1,0 +1,252 @@
+.media-embed {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.media-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.embed-preview {
+  display: block;
+  position: relative;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+.spotify-embed {
+  height: 352px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #1c1f18;
+}
+.spotify-embed iframe {
+  border-radius: 4px;
+}
+.spotify-embed .embed-preview {
+  padding: 24px;
+}
+.spotify-preview-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.spotify-preview-heading img {
+  width: 58px;
+  height: 58px;
+}
+.spotify-preview-heading > span {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 3px;
+}
+.spotify-preview-heading .eyebrow {
+  color: var(--muted);
+  font-size: 8px;
+}
+.spotify-preview-heading strong {
+  font-family: var(--font-display), sans-serif;
+  font-size: 25px;
+  line-height: 1.1;
+}
+.spotify-preview-heading > span > span:last-child {
+  color: var(--muted);
+  font-size: 11px;
+}
+.spotify-preview-heading > svg {
+  color: #a8b29a;
+  flex-shrink: 0;
+}
+.preview-tracks {
+  display: grid;
+}
+.preview-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 37px;
+  border-bottom: 1px solid #33382a;
+  font-size: 12px;
+}
+.preview-track > span {
+  font-family: var(--font-mono), monospace;
+  color: #8c947f;
+  font-size: 9px;
+}
+.preview-track strong {
+  flex: 1;
+  font-weight: 400;
+}
+.load-spotify {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 12px;
+}
+.load-spotify > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.spotify-embed .embed-preview:hover {
+  background: #24281e;
+}
+.player-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 19px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.player-tabs button {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: 0 0 10px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.player-tabs button[aria-pressed="true"] {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.player-tabs button:hover {
+  color: var(--foreground);
+}
+.player-footnote {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding-top: 12px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.player-footnote a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.player-footnote a:hover {
+  color: var(--accent);
+}
+.youtube-embed {
+  aspect-ratio: 16 / 9;
+  background: #090a08;
+}
+.youtube-embed .embed-preview > img {
+  object-fit: cover;
+  filter: grayscale(1);
+  transition:
+    filter 0.3s,
+    transform 0.3s;
+}
+.video-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #0009, #0002 50%, #0007);
+}
+.video-category {
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  color: #e7ebdd;
+  font-size: 8px;
+}
+.video-play {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 66px;
+  height: 66px;
+  margin-left: -33px;
+  margin-top: -33px;
+  border: 1px solid #cbd5b775;
+  border-radius: 50%;
+  background: #12150c50;
+  backdrop-filter: blur(8px);
+  color: var(--accent);
+  padding-left: 4px;
+  transition: background 0.2s;
+}
+.video-duration {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  padding: 3px 7px;
+  background: #101110b0;
+}
+.youtube-embed .embed-preview:hover > img {
+  filter: grayscale(0);
+  transform: scale(1.03);
+}
+.youtube-embed .embed-preview:hover .video-play {
+  background: var(--accent);
+  color: var(--background);
+}
+
+@media (max-width: 1050px) {
+  .spotify-embed .embed-preview {
+    padding: 20px;
+  }
+  .spotify-preview-heading strong {
+    font-size: 22px;
+  }
+  .player-tabs {
+    gap: 13px;
+  }
+  .player-tabs button {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 760px) {
+  .player-tabs {
+    gap: 23px;
+  }
+  .spotify-embed .embed-preview {
+    padding: 24px;
+  }
+  .player-tabs button {
+    font-size: 11px;
+  }
+  .spotify-preview-heading strong {
+    font-size: 25px;
+  }
+  .video-category {
+    top: 17px;
+    left: 17px;
+  }
+  .video-play {
+    width: 58px;
+    height: 58px;
+    margin-left: -29px;
+    margin-top: -29px;
+  }
+}
+
+@media (max-width: 380px) {
+  .player-tabs {
+    gap: 14px;
+  }
+  .player-tabs button {
+    font-size: 10px;
+  }
+  .spotify-embed .embed-preview {
+    padding: 19px;
+  }
+}
